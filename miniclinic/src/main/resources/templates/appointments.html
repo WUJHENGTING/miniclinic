@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>掛號紀錄 - MiniClinic</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; max-width: 800px; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        a.btn { display: inline-block; margin-top: 20px; text-decoration: none; background: #14B8A6; color: white; padding: 8px 16px; border-radius: 4px; }
+        a.btn:hover { background: #0D9488; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a th:href="@{/}">首頁</a>
+        <a th:href="@{/doctors}">醫師清單</a>
+        <a th:href="@{/appointment/new}">線上掛號</a>
+        <a th:href="@{/patients}">病歷資料</a>
+        <a th:href="@{/appointments}">掛號記錄</a>
+        <a th:href="@{/stats}">統計資訊</a>
+        <a th:href="@{/login}">醫師登入</a>
+    </nav>
+    <h1>📅 所有掛號紀錄</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>預約編號</th>
+                <th>病患姓名</th>
+                <th>看診醫師</th>
+                <th>科別</th>
+                <th>預約日期</th>
+                <th>時段</th>
+                <th>狀態</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="appt : ${appointments}">
+                <td th:text="${appt.apptId}">1</td>
+                <td th:text="${appt.patient.name}">王小明</td>
+                <td th:text="${appt.doctor.name}">陳醫師</td>
+                <td th:text="${appt.doctor.department}">內科</td>
+                <td th:text="${appt.apptDate}">2026-05-01</td>
+                <td th:text="${appt.timeSlot}">上午</td>
+                <td th:text="${appt.status}">BOOKED</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/" class="btn">← 返回首頁</a>
+</body>
+</html>
