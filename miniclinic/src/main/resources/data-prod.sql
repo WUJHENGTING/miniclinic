@@ -1,4 +1,4 @@
-- 初始醫師資料（5 位）帶入 pass1234 的 BCrypt 雜湊
+-- 初始醫師資料（5 位）帶入 pass1234 的 BCrypt 雜湊
 INSERT INTO doctor (doctor_id, name, department, specialty, password_hash) VALUES
     ('D001', '陳志明醫師', '家醫科', '一般內科、慢性病管理','$2a$10$XhyEgd4qh5TXJa7NkMg3gOqsJxATykAyJERH7ZqTD7eEPVlcmgewm'),
     ('D002', '林佩君醫師', '內科',   '心臟血管、高血壓', '$2a$10$/x/fVm66HZJWeeYZRUbPp..gS9Czgs3a27RjYQPs75obpRoUWU9ZC'),
