@@ -20,4 +20,7 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
     List<Object[]> countAppointmentsByDepartment();
     
     List<Appointment> findByDoctorAndApptDate(Doctor doctor, LocalDate apptDate);
+
+    // 依狀態計算掛號數
+    long countByStatus(String status);
 }

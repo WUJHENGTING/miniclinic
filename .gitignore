@@ -1,22 +1,22 @@
-# Compiled output
-target/
+# Compiled class file
 *.class
 
-# IDE
-.idea/
-.vscode/
-*.iml
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
+# Log file
 *.log
 
-# Database
-*.db
-*.db-journal
+# Build directories
+target/
+build/
+bin/
 
-# Sensitive config
-.env
+# IDE directories
+.idea/
+*.iml
+.vscode/
+
+# SQLite databases
+*.db
+*.sqlite
+
+# OS generated files
+.DS_Store
