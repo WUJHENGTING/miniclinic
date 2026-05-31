@@ -24,8 +24,8 @@ public class DataInitializer {
         return args -> {
             logger.info("===== 正在檢查資料庫初始化狀態... =====");
             
-            // 如果醫生數量少於 5 位，代表裡面是舊的不完整資料，直接清空重寫
-            if (doctorRepository.count() < 5) {
+            // 暫時改為 true：強制每次啟動都清空並重建資料，確保不會讀到舊的亂碼
+            if (true) {
                 logger.info("檢測到舊的測試資料，正在清除並重新寫入完整資料...");
 
                 // 注意刪除順序：先刪除有關聯的預約，再刪除醫生和病患，避免外鍵衝突
@@ -63,9 +63,6 @@ public class DataInitializer {
                 appointmentRepository.saveAll(Arrays.asList(appt1, appt2, appt3));
 
                 logger.info("===== 測試資料已成功寫入資料庫 =====");
-            } else {
-                logger.info("===== 資料庫已有資料 (醫生: {}, 預約: {})，跳過初始化 =====", 
-                    doctorRepository.count(), appointmentRepository.count());
             }
 
             // 強制將所有醫師的密碼重設為正確的 pass1234 雜湊 (移除 == null 判斷，覆寫原本可能無效的舊資料)

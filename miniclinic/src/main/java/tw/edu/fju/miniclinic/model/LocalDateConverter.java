@@ -4,7 +4,7 @@ import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 import java.time.LocalDate;
 
-@Converter
+@Converter(autoApply = true)
 public class LocalDateConverter implements AttributeConverter<LocalDate, String> {
 
     @Override
