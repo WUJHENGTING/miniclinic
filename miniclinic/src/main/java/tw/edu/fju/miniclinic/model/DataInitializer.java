@@ -50,15 +50,15 @@ public class DataInitializer {
                 // 3. 建立並儲存 3 筆預約
                 Appointment appt1 = new Appointment();
                 appt1.setDoctor(doc1); appt1.setPatient(pat1);
-                appt1.setApptDate(LocalDate.parse("2026-05-01")); appt1.setTimeSlot("上午"); appt1.setStatus("BOOKED");
+                appt1.setApptDate(LocalDate.now()); appt1.setTimeSlot("上午"); appt1.setStatus("BOOKED");
 
                 Appointment appt2 = new Appointment();
                 appt2.setDoctor(doc2); appt2.setPatient(pat2);
-                appt2.setApptDate(LocalDate.parse("2026-05-01")); appt2.setTimeSlot("上午"); appt2.setStatus("BOOKED");
+                appt2.setApptDate(LocalDate.now()); appt2.setTimeSlot("上午"); appt2.setStatus("BOOKED");
 
                 Appointment appt3 = new Appointment();
                 appt3.setDoctor(doc3); appt3.setPatient(pat3);
-                appt3.setApptDate(LocalDate.parse("2026-05-02")); appt3.setTimeSlot("下午"); appt3.setStatus("BOOKED");
+                appt3.setApptDate(LocalDate.now()); appt3.setTimeSlot("下午"); appt3.setStatus("BOOKED");
 
                 appointmentRepository.saveAll(Arrays.asList(appt1, appt2, appt3));
 

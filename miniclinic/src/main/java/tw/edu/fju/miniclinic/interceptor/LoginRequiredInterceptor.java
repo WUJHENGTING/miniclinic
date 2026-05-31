@@ -12,6 +12,11 @@ public class LoginRequiredInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler) throws Exception {
+        // 作業要求：開放 /api/stats 讓它不需要登入即可存取
+        if (request.getRequestURI().equals("/api/stats")) {
+            return true;
+        }
+
         HttpSession session = request.getSession(false);
         
         if (session == null || session.getAttribute("loggedInDoctorId") == null) {
