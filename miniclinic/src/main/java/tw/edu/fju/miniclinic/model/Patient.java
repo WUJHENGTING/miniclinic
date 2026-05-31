@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "patients")
+@Table(name = "patient")
 public class Patient {
     @Id
     @Column(name = "chart_no", length = 20)
